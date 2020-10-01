@@ -49,7 +49,51 @@ render(){
     return(
         <div>
              <header className = {classes.header}>Todos</header>
-             <div className={classes.Topitem}> 
+
+
+
+             <div className={classes.main}>
+                 <div>
+                 <Icon size={24} icon={pen} className={classes.item} style={{marginTop:'95%' , height:'50%'}}/>
+                 </div>
+
+
+                 <div style={{display:'flex' , flexDirection:'column' , justifyContent:'start' , width:'40%' , boxSizing:'border-box' , margin:'10px'}}>
+                 <label className={classes.items}  style={{textAlign:'left'}}>Todo</label>
+                 <input type = "text" className={classes.priority} placeholder = "write your todo"  value = {this.state.taskName} 
+                  onChange = {item => this.updateInput(item.target.value) } style={{width:'100%' , marginLeft:'5px'}} 
+                 /> 
+                 </div>
+
+
+                 <div style={{display:'flex' , flexDirection:'column' , justifyContent:'start' , width:'40%',boxSizing:'border-box',margin:'10px'}}>
+                 <label className={classes.items} style={{textAlign:'left'}}>Priority</label>
+                 <select  className={classes.priority}  value = {this.state.taskPriority} 
+                   onChange = {item => this.updateSelect(item.target.value)}  style={{width:'100%' , marginLeft:'5px'}}>
+                <option>priority</option>
+                <option>high</option>
+                <option>mid</option>
+                <option>less</option>
+                </select>
+                 </div>
+
+                 <div>
+                 <button className={classes.item} onClick={this.addTaskHandler} style={{marginTop:'35%' , height:'40%'}}> Save </button>
+                 </div>
+
+
+ 
+
+
+
+             </div>
+
+                
+
+
+
+
+         { /*   <div className={classes.Topitem}> 
                  <label className={classes.items}>Todo</label>
                  <label className={classes.items}>Priority</label>
              </div>
@@ -67,16 +111,17 @@ render(){
             </select>
             <button className={classes.item} onClick={this.addTaskHandler}> Save </button>
              </div>
+*/}
 
 
-             <div> <h1 style={{textAlign:'left' , marginLeft:'340px' , marginTop:'100px' , color:'gray'}}> Todo Item</h1></div>
+             <div> <h1 style={{textAlign:'left' , marginLeft:'320px' , marginTop:'100px' , color:'gray'}}> Todo Item</h1></div>
              <Divider className={classes.Divider} />
               <div className = {classes.Infoheader}>
-                  <span style={{width:'40px'}}>SL</span>
-                  <span style={{width:'200px' , wordBreak:'break-all' , textAlign:'left'}}>Todo</span>
-                  <span style={{width:'200px' , wordBreak:'break-all', textAlign:'left'}}>Date</span>
-                  <span style={{width:'80px',textAlign:'left'}}>Prioity</span>
-                  <span style={{width:'80px',textAlign:'left'}}>Status</span>
+                  <span style={{width:'20px'}}>SL</span>
+                  <span style={{width:'250px' , wordBreak:'break-all' , textAlign:'left'}}>Todo</span>
+                  <span style={{width:'250px' , wordBreak:'break-all', textAlign:'left'}}>Date</span>
+                  <span style={{width:'40px',textAlign:'left'}}>Prioity</span>
+                  <span style={{width:'40px',textAlign:'left'}}>Status</span>
                   <span style={{ width:'20px'}}>#</span>
 
               </div>

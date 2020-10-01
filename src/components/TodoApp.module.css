@@ -35,12 +35,6 @@ padding: 15px;
    
   }
 
-  .priority{
-    margin: 20px;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid gray;
-  }
   button{
     background-color: lightseagreen;
     width: 80px;
@@ -80,4 +74,24 @@ padding: 15px;
   div.ch:nth-child(odd) { /* Selects only odd elements */
     background-color: lightgray;   
    
+}
+ 
+
+.main{
+  max-width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content:start;
+  
+}
+select , input {
+  outline:none;
+  border: none;
+  border-bottom:1px solid gray;
+  
+}
+
+label{
+  color:gray
 }
