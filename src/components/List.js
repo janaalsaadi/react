@@ -23,7 +23,7 @@ export default class List extends Component{
                   <span style={{ width:'80px',display:'flex' , justifyContent:'end' , flexDirection:'column' , }}>
                   <FontAwesomeIcon icon={faCheck} /> 
 
-                  <FontAwesomeIcon icon={faTrash} onClick={this.props.deleted} /> 
+                  <FontAwesomeIcon icon={faTrash}  /> 
                   </span>
             </div>
           
