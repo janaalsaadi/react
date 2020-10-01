@@ -16,6 +16,11 @@ state = {
   tasks :[]
 }
 
+removeTodo = (id) => {
+    const remainder = this.state.tasks.filter(item => item.id !== id);
+    this.setState({tasks: remainder});
+ }
+
 addTaskHandler = () => {
      
  if(this.state.taskName !==''){ 
@@ -103,7 +108,7 @@ render(){
               <Divider className={classes.Divider} />
                   <div>
                       {this.state.tasks.map(item => (
-                          <List name={item.name} prior ={item.pr} id={item.id}></List>
+                          <List name={item.name} prior ={item.pr} id={item.id} deleted = {this.removeTodo}></List>
                           
                       ))}
 
