@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash , faCheck } from '@fortawesome/free-solid-svg-icons';
 import {  } from '@fortawesome/free-brands-svg-icons'
 import classes from './TodoApp.module.css';
-import { Divider } from '@material-ui/core';
 export default class List extends Component{
 
 
