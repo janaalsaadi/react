@@ -13,8 +13,8 @@ export default class List extends Component{
     render(){
 
         return(
-            <div className={classes.ch }>
-            <div className={classes.tasksDet}>
+           
+            <div className={classes.ch}>
                  <span style={{width:'20px', }}>{this.props.id}</span>
                   <span style={{width:'250px' , wordBreak:'break-all',textAlign:'left'}}>{this.props.name} </span>
                   <span style={{width:'250px' , wordBreak:'break-all',textAlign:'left' }}>{this.state.date}</span>
@@ -23,11 +23,10 @@ export default class List extends Component{
                   <span style={{ width:'80px',display:'flex' , justifyContent:'end' , flexDirection:'column' , }}>
                   <FontAwesomeIcon icon={faCheck} /> 
 
-                  <FontAwesomeIcon icon={faTrash} /> 
+                  <FontAwesomeIcon icon={faTrash} onClick={this.props.deleted} /> 
                   </span>
             </div>
-                     <Divider/>
-            </div>
+          
         )
     }
 }
