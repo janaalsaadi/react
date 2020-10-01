@@ -22,7 +22,9 @@ export default class List extends Component{
                   <span style={{ width:'80px',display:'flex' , justifyContent:'end' , flexDirection:'column' , }}>
                   <FontAwesomeIcon icon={faCheck} /> 
 
-                  <FontAwesomeIcon icon={faTrash}  /> 
+                  <FontAwesomeIcon icon={faTrash} onClick = { () => {
+                      alert("jana");
+                  }}  /> 
                   </span>
             </div>
           
