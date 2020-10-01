@@ -1,0 +1,83 @@
+
+header{
+background-color: palevioletred;
+font-size: 30px;
+text-align: left;
+height: 80px;
+color: white;
+padding:'10px' ;
+box-sizing: border-box;
+padding: 15px;
+}
+
+.infoData {
+   display: flex;
+   justify-content: center;
+  }
+
+  .item{
+   margin-top: 50px;
+    margin: 10px;
+  }
+  .Topitem{
+  display: flex;
+    color: gray;
+    justify-content: center;
+  }
+
+  .items{
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin: 10px;
+    width: 180px;
+  
+   padding-right: 80px;
+   
+  }
+
+  .priority{
+    margin: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  button{
+    background-color: lightseagreen;
+    width: 80px;
+  }
+  select{
+    width: 80px;
+  }
+
+  .Infoheader{
+    display: flex;
+    font-weight: bold;
+    justify-content: start;
+    height: auto;
+    max-width: 60%;
+
+    margin: auto;
+    
+  }
+
+  span{
+    width: auto;
+    margin: 20px;
+  }
+
+
+  .tasksDet{
+    display: flex;
+    font-weight: bold;
+    justify-content: start;
+    height: auto;
+    max-width: 60%;
+    margin: auto;
+   
+  }
+ 
+
+  div.ch:nth-child(odd) { /* Selects only odd elements */
+    background-color: lightgray;   
+   
+}
