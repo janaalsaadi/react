@@ -13,7 +13,7 @@ export default class List extends Component{
 
         return(
            
-            <div className={classes.ch}>
+            <div className={classes.ch} key={this.props.id}>
                  <span style={{width:'5%', }} className={classes.ListItem}>{this.props.id}</span>
                   <span style={{width:'25%'}} className={classes.ListItem}>{this.props.name} </span>
                   <span style={{width:'45%' }} className={classes.ListItem}>{this.state.date}</span>
@@ -22,7 +22,7 @@ export default class List extends Component{
                   <span style={{ width:'5%' }} className={classes.ListIcon}>
                   <FontAwesomeIcon icon={faCheck} /> 
 
-                  <FontAwesomeIcon icon={faTrash} onClick ={() => this.props.deleted(this.props.id)} /> 
+                  <FontAwesomeIcon icon={faTrash} onClick ={this.props.deleted} /> 
                   </span>
             </div>
           

@@ -6,15 +6,17 @@ import ReactDOM from 'react-dom';
 import { Divider } from '@material-ui/core';
 
 import List from './List';
+import { connect } from "react-redux";
 
-export default class TodoApp extends Component{
+ class TodoApp extends Component{
 
 state = {
   taskName:'',
   taskPriority:'',
-  id:0,
+  id:1,
   tasks :[]
 }
+/*
 
 removeTodo = (id) => {
     const remainder = this.state.tasks.filter(item => item.id !== id);
@@ -35,12 +37,12 @@ addTaskHandler = () => {
       pr:pr
   }
   this.setState({id:newItem.id});
-newArr.push(newItem);
+  newArr.push(newItem);
   this.setState({tasks:newArr});
 }
  }
 }
-
+*/
 updateInput(value){ 
     this.setState({ 
       taskName: value, 
@@ -48,8 +50,10 @@ updateInput(value){
   } 
 
   updateSelect(value){
-      this.setState({taskPriority:value})
+      this.setState({taskPriority:value })
   }
+ 
+
 render(){
     return(
         <div>
@@ -82,15 +86,14 @@ render(){
                 </select>
                  </div>
 
-                 <div>
-                 <button className={classes.item} onClick={this.addTaskHandler} style={{marginTop:'35%' , height:'40%'}}> Save </button>
+                 <div onClick={() => this.setState({id:this.state.id+1})}>  
+                 <button
+                  className={classes.item}
+                  onClick={() => this.props.onTaskAdded(this.state.id,this.state.taskName,this.state.taskPriority)} style={{marginTop:'35%' , height:'40%'}}> Save </button>
                  </div>
 
 
  
-
-
-
              </div>
 
 
@@ -106,9 +109,10 @@ render(){
 
               </div>
               <Divider className={classes.Divider} />
-                  <div>
-                      {this.state.tasks.map(item => (
-                          <List name={item.name} prior ={item.pr} id={item.id} deleted = {this.removeTodo}></List>
+                  <div> 
+                      {this.props.tsk.map((item) => (
+                          <List key={item.id}
+                           name={item.taskName} prior ={item.taskPriority} id={item.id} deleted = {id => this.props.onTaskDeleted(item.id)}></List>
                           
                       ))}
 
@@ -121,3 +125,19 @@ render(){
 
 
 }
+const mapStateToProps = state => {
+       return{
+         tsk:state.tasks
+       }
+}
+
+const mapDispathToProps = dispatch => {
+  return{
+    onTaskAdded :(id ,name , priority ) =>
+        dispatch({type:"ADD_TASK" , taskInfo:{id :id , taskName:name , taskPriority:priority}}),
+    onTaskDeleted : id => dispatch({type : "DELETE_TASK" , id:id})
+    
+  }
+
+}
+export default connect(mapStateToProps , mapDispathToProps)(TodoApp);
