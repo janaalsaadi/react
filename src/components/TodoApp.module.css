@@ -64,9 +64,39 @@ select , input {
   outline:none;
   border: none;
   border-bottom:1px solid gray;
-  
+  width: 100%;
+  margin-left: 5px;
+  margin-top: 10px;
 }
 
 label{
-  color:gray
+  color:gray;
+  text-align: left;
+}
+
+.ListItem{
+    text-align: left;
+    word-break: break-all;
+}
+
+.ListIcon{
+  display : flex;
+  justify-content: end;
+  flex-direction: column;
+}
+
+h1{
+  text-align: left;
+  margin-left: 320px;
+  margin-top: 100px; 
+  color: gray;
+}
+
+.divInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 40%;
+  box-sizing: border-box;
+  margin: 10px;
 }

@@ -24,7 +24,7 @@ removeTodo = (id) => {
 addTaskHandler = () => {
      
  if(this.state.taskName !==''){ 
-     if(this.state.taskPriority !== ''){
+     if(this.state.taskPriority !== '' && this.state.taskPriority !== 'priority'){
   const newArr = [...this.state.tasks];
   var name = this.state.taskName;
   var pr =this.state.taskPriority;
@@ -63,18 +63,18 @@ render(){
                  </div>
 
 
-                 <div style={{display:'flex' , flexDirection:'column' , justifyContent:'start' , width:'40%' , boxSizing:'border-box' , margin:'10px'}}>
-                 <label className={classes.items}  style={{textAlign:'left'}}>Todo</label>
+                 <div className={classes.divInfo}>
+                 <label>Todo</label>
                  <input type = "text" className={classes.priority} placeholder = "write your todo"  value = {this.state.taskName} 
-                  onChange = {item => this.updateInput(item.target.value) } style={{width:'100%' , marginLeft:'5px' , marginTop:'10px'}} 
+                  onChange = {item => this.updateInput(item.target.value) } 
                  /> 
                  </div>
 
 
-                 <div style={{display:'flex' , flexDirection:'column' , justifyContent:'start' , width:'40%',boxSizing:'border-box',margin:'10px'}}>
-                 <label className={classes.items} style={{textAlign:'left'}}>Priority</label>
+                 <div className={classes.divInfo}>
+                 <label>Priority</label>
                  <select  className={classes.priority}  value = {this.state.taskPriority} 
-                   onChange = {item => this.updateSelect(item.target.value)}  style={{width:'100%' , marginLeft:'0px', marginTop:'10px'}}>
+                   onChange = {item => this.updateSelect(item.target.value)} >
                 <option>priority</option>
                 <option>high</option>
                 <option>mid</option>
@@ -94,15 +94,15 @@ render(){
              </div>
 
 
-             <div> <h1 style={{textAlign:'left' , marginLeft:'320px' , marginTop:'100px' , color:'gray'}}> Todo Item</h1></div>
+             <div> <h1> Todo Item</h1></div>
              <Divider className={classes.Divider} />
               <div className = {classes.Infoheader}>
-                  <span style={{width:'20px'}}>SL</span>
-                  <span style={{width:'250px' , wordBreak:'break-all' , textAlign:'left'}}>Todo</span>
-                  <span style={{width:'250px' , wordBreak:'break-all', textAlign:'left'}}>Date</span>
-                  <span style={{width:'40px',textAlign:'left'}}>Prioity</span>
-                  <span style={{width:'40px',textAlign:'left'}}>Status</span>
-                  <span style={{ width:'20px'}}>#</span>
+                  <span style={{width:'5%'}}>SL</span>
+                  <span style={{width:'25%' }} className={classes.ListItem}>Todo</span>
+                  <span style={{width:'45%'}} className={classes.ListItem}>Date</span>
+                  <span style={{width:'10%' , textAlign:'left'}} >Prioity</span>
+                  <span style={{width:'10%' , textAlign:'left'}} >Status</span>
+                  <span style={{ width:'5%'}}>#</span>
 
               </div>
               <Divider className={classes.Divider} />

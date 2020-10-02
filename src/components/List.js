@@ -14,12 +14,12 @@ export default class List extends Component{
         return(
            
             <div className={classes.ch}>
-                 <span style={{width:'20px', }}>{this.props.id}</span>
-                  <span style={{width:'250px' , wordBreak:'break-all',textAlign:'left'}}>{this.props.name} </span>
-                  <span style={{width:'250px' , wordBreak:'break-all',textAlign:'left' }}>{this.state.date}</span>
-                  <span style={{width:'40px',textAlign:'left'}}>{this.props.prior}</span>
-                  <span style={{width:'40px',textAlign:'left'}}>pinding</span>
-                  <span style={{ width:'80px',display:'flex' , justifyContent:'end' , flexDirection:'column' , }}>
+                 <span style={{width:'5%', }} className={classes.ListItem}>{this.props.id}</span>
+                  <span style={{width:'25%'}} className={classes.ListItem}>{this.props.name} </span>
+                  <span style={{width:'45%' }} className={classes.ListItem}>{this.state.date}</span>
+                  <span style={{width:'10%'}} className={classes.ListItem}>{this.props.prior}</span>
+                  <span style={{width:'10%' , textAlign:'left'}} >pinding</span>
+                  <span style={{ width:'5%' }} className={classes.ListIcon}>
                   <FontAwesomeIcon icon={faCheck} /> 
 
                   <FontAwesomeIcon icon={faTrash} onClick ={() => this.props.deleted(this.props.id)} /> 
